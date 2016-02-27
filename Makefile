@@ -23,6 +23,9 @@ include ./node_modules/make-jshint/index.mk
 %.css: %.styl
 	$(NODE_BIN)/stylus --include-css --compress --use ./node_modules/stylus-font-face --use ./node_modules/nib $<
 
+jscs:
+	$(NODE_BIN)/jscs lib
+
 test:
 	$(NODE_BIN)/mocha --recursive --require should
 

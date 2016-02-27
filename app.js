@@ -59,8 +59,8 @@ app.run = function run() {
       process.exit(1);
       return;
     }
-    http.createServer(app).listen(app.get('port'), function(){
-      console.log("Running on: " + "http://localhost:" + app.get('port'));
+    http.createServer(app).listen(app.get('port'), function() {
+      console.log('Running on: ' + 'http://localhost:' + app.get('port'));
     });
   });
 };

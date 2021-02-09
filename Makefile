@@ -4,6 +4,8 @@ NODE_BIN=./node_modules/.bin
 BUILD_DIR=public/scripts
 CSS_DIR=public/stylesheets
 SRC = $(wildcard lib/client/*/*.js)
+TESTS = $(filter-out test/replay/%, $(wildcard test/*.js test/*/*.js))
+
 LINT_SRC = app.js bin/generate lib test
 
 PLUGINS = lifts twitter weather webcams snow
@@ -13,13 +15,13 @@ all: lint test build
 # common rules
 
 %.br: %
-	bro --input $< --output $@
+	brotli --best --force $<
 
 %.gz: %
-	gzip --best --stdout $< > $@
+	gzip --best --force --keep $<
 
 %.min.js: %.js
-	$(NODE_BIN)/uglifyjs $< --mangle --no-copyright --compress --output $@
+	$(NODE_BIN)/uglifyjs $< --mangle --no-copyright --compress "pure_funcs=console.log" --output $@
 
 %.css: %.styl
 	$(NODE_BIN)/stylus $<
@@ -28,7 +30,6 @@ all: lint test build
 		--postcss-cachify.baseUrl /stylesheets \
 		--postcss-cachify.basePath public \
 		--use autoprefixer \
-		--autoprefixer.browsers 'last 2 versions, Explorer >= 11, Safari >= 8, Firefox ESR' \
 		--output $@ $@
 
 %.min.css: %.css
@@ -38,7 +39,7 @@ lint:
 	$(NODE_BIN)/jshint $(LINT_SRC)
 
 test:
-	$(NODE_BIN)/mocha --recursive --require should --require test/replay
+	$(NODE_BIN)/tape $(TESTS) | $(NODE_BIN)/tap-dot
 
 $(BUILD_DIR):
 	mkdir -p $@

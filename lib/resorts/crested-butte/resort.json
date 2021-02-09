@@ -1,11 +1,12 @@
 {
   "name": "Crested Butte",
   "url": {
-    "host": "http://www.skicb.com",
-    "pathname": "/the-mountain/grooming-lift-status"
+    "host": "https://www.skicb.com",
+    "pathname": "/the-mountain/mountain-conditions/lift-and-terrain-status.aspx"
   },
   "tags": [
-    "Colorado"
+    "Colorado",
+    "Vail Epic"
   ],
   "ll": [
     -106.964821,
@@ -13,5 +14,5 @@
   ],
   "twitter": "skicrestedbutte",
   "opening": "2017-11-23",
-  "noaa": "GJT/152,88"
+  "noaa": "GJT/149,88"
 }

@@ -1,30 +1,13 @@
-var should = require('should');
-var fs = require('fs');
-var parser = require('../../lib/lifts/parser');
-var parse = require('../../lib/lifts/parse')('mount-sunapee');
+const lifts = require('../lifts');
 
-/*global describe, it */
-describe('parse mount-sunapee', function() {
-
-  it('should return lift status', function(done) {
-    var stream = fs.createReadStream(__dirname + '/example/mount-sunapee.html');
-    stream.on('error', done);
-    stream.pipe(parser(parse, function(err, status) {
-      var expected = {
-        "Sunapee Express": "closed",
-        "Sunbowl Express": "closed",
-        "North Peak Triple": "closed",
-        "Spruce Triple": "closed",
-        "Duckling Double": "closed",
-        "Clipper Ship Quad": "closed",
-        "Middle Carpet": "closed",
-        "Flying Carpet": "closed",
-        "Piggyback": "closed",
-        "Small Carpet": "closed"
-      };
-      should.exist(status);
-      status.should.eql(expected);
-      done(err);
-    }));
-  });
+lifts('mount-sunapee', 'html', {
+  "Sunapee Express": "open",
+  "Sunbowl Express": "open",
+  "North Peak Triple": "open",
+  "Spruce Triple": "closed",
+  "Clipper Ship Quad": "open",
+  "Middle Carpet": "open",
+  "Flying Carpet": "open",
+  "Piggyback": "closed",
+  "Little Carpet": "closed"
 });

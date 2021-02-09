@@ -1,4 +1,126 @@
 
+3.29.6 / 2020-12-09
+===================
+
+ * fix Attitash, Wildcat, Mount Snow
+ * make manifest icons maskable
+
+3.29.5 / 2020-05-26
+===================
+
+ * replace mocha/should with tape
+ * use replay to test twitter
+ * simplify resort tests
+ * fix About link
+ * update NOAA stations
+ * use standard brotli tool
+ * add missing noopener for furkot links
+ * upgrade tweet-html to 1.5.1
+
+3.29.4 / 2020-05-22
+===================
+
+ * fix squaw and alpine
+
+3.29.3 / 2020-05-22
+===================
+
+ * fix same-site cookie warning
+ * add preload headers for fonts
+ * add Feature-Policy, Referrer-Policy, and  Content-Security-Policy headers
+ * remove polyfills - not needed by modern browsers
+ * add integrity for stylesheet and script
+ * add support for static host
+ * fix og:image reference
+
+3.29.2 / 2020-05-20
+===================
+
+ * add preconnect links for twitter related domains
+ * add theme-color
+ * modernize manifest.json
+ * use default browserlist for autoprefixer
+ * drop console.log when minimizing
+ * remove unnecessary user-scalable declaration
+ * update tweet-html
+
+3.29.1 / 2020-05-19
+===================
+
+ * update webcams API
+ * upgrade getlet to 2.4.0
+ * update dependencies
+ * switch to .svg favicons
+ * switch to .woff2 fonts
+ * update README with more info on adding new resorts
+
+3.29.0 / 2020-05-19
+===================
+
+ * add Morzine resort
+ * add Timberline Lodge resort
+
+3.28.6 / 2020-05-17
+===================
+
+ * add `noopener` attribute to external links
+ * fix HTML tag typo - ui -> ul
+ * fix Silver Star
+ * fix Sugarbowl
+
+3.28.5 / 2019-12-22
+===================
+
+ * fix 49 Degree North
+ * fix Via Lattea
+
+3.28.4 / 2019-12-20
+===================
+
+ * fix Monarch for the new season
+ * fix Crystal Mountain for the new season
+ * fix Solitude for the new season
+ * fix Brighton for the new season
+ * fix Angel Fire for the new season
+
+3.28.3 / 2019-12-19
+===================
+
+ * fix Gunstock for the new season
+ * fix Mount Sunapee for the new season
+ * fix Okemo for the new season
+ * fix Crested Butte for the new season
+ * fix Stven's Pass for the new season
+
+3.28.2 / 2019-12-17
+===================
+
+ * remove Arapahoe Basin from vail/epic category
+ * update vail resorts test data
+ * fix Vail resorts script parsing
+
+3.28.1 / 2019-11-12
+===================
+
+ * upgrade css-select and debug
+ * upgrade moccha
+ * upgrade autoprefixer
+ * soft dependency update
+
+3.28.0 / 2019-11-06
+===================
+
+ * add Montegenevre
+ * add Cesana Claviere
+ * add Cesana San Sicario
+ * add Sauze d'Oulx
+ * add Sestriere
+
+3.27.0 / 2019-03-12
+===================
+
+ * add Les Arcs resort
+
 3.26.4 / 2019-02-28
 ===================
 

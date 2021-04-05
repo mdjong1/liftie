@@ -1,4 +1,34 @@
 
+3.30.3 / 2021-03-08
+===================
+
+ * remove Ischgl - Silvretta twitter account
+
+3.30.2 / 2021-02-25
+===================
+
+ * improve Makefile to run yarn automatically
+ * add `start_url` to manifest
+
+3.30.1 / 2021-02-24
+===================
+
+ * fix Sunday River for new season
+ * fix Big Sky for new season
+ * fixes to boyne parser
+ * make tap reporter configurable
+
+3.30.0 / 2021-02-17
+===================
+
+ * upgrade postcss-cli-simple
+ * replace ugligy with terser
+ * upgrade clean-css
+ * remove autoprefixer
+ * upgrade stylus
+ * improve displaying tweets with line-breaks
+ * upgrade tweet-html
+
 3.29.6 / 2020-12-09
 ===================
 

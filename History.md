@@ -1,4 +1,115 @@
 
+3.32.6 / 2021-12-24
+===================
+
+ * render stats using CSS pie chart
+ * use modern javascript on the client
+
+3.32.5 / 2021-12-18
+===================
+
+ * fix Hochfuegen resort
+ * fix Monarch resort
+ * fix Red Mountain resort
+
+3.32.4 / 2021-12-17
+===================
+
+ * fix Mount Bachelor resort
+ * remove defunct Killington webcams
+ * add official twitter for Maddonna - Pinzolo
+ * fix fetch-noaa script
+ * re-add Saddleback Maine resort after reactivation
+
+3.32.3 / 2021-12-07
+===================
+
+ * fix Rosiere resort
+ * fix Mount Hood resort
+ * fix Hunter Mountain resort
+ * fix China Peak resort
+ * fix Cataloochee resort
+ * fix Shawnee Mountain resort
+ * fix Shawnee Peak resort
+
+3.32.2 / 2021-12-05
+===================
+
+ * fix Smugglers' Notch resort
+ * fix Mount Rose resort
+ * fix Windham resort
+ * fix Camelback resort
+ * fix Caberfae url
+ * fix Brianhead resort
+ * fix Pats Peak resort
+ * fix Alta resort
+ * fix Brighton resort
+
+3.32.1 / 2021-12-02
+===================
+
+ * fix Telluride resort
+ * fix Whiteface and Gore Mountain resorts
+ * fix Sugarbush resort
+ * fix Boyne resorts
+ * fix jackson-hole
+ * add support for http2 requests
+ * improve assertion message
+ * fix documentation for `filter` property
+ * replace Travis CI with github actions
+ * remove broken dep links from Readme
+ * add Val Gardena resort
+
+3.32.0 / 2021-10-07
+===================
+
+ * add Niseko Japan resort
+ * add Threadbo resort
+ * fix Gore Mountain resort
+
+3.31.3 / 2021-10-05
+===================
+
+ * remove getlet dependency
+ * fix Bolton Valley resort
+
+3.31.2 / 2021-10-04
+===================
+
+ * improve notice styling
+ * fix NOAA logo
+ * fix Bromley resort
+ * fix Intrawest resorts
+ * fix St. Anton Am Arlberg resort
+ * fix Attitash resort
+ * fix Diamondpeak resort
+ * fix Loveland resort
+
+3.31.1 / 2021-10-03
+===================
+
+ * fix Kitzbühel resort
+ * fix Palisades Tahoe resorts
+ * fix Mount Buller resort
+
+3.31.0 / 2021-10-02
+===================
+
+ * add Ponte di Legno - Tonale resorts
+ * add Folgarida Marilleva
+ * add Pinzolo
+ * add Madonna di Campiglio
+ * fix Arapahoe Basin resort
+ * fix June Mountain resort
+ * fix Alyeska resort
+ * dependency update
+ * remove cert checking hack
+
+3.30.4 / 2021-04-07
+===================
+
+ * update Vail parser to follow through the waitingroom
+
 3.30.3 / 2021-03-08
 ===================
 

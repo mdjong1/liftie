@@ -1,8 +1,8 @@
 {
   "name": "Gore Mountain",
   "url": {
-    "host": "http://www.goremountain.com",
-    "pathname": "/snow-reports"
+    "host": "https://goremountain.com",
+    "pathname": "/the-mountain/conditions/"
   },
   "tags": [
     "New York"
@@ -12,6 +12,5 @@
     43.672653
   ],
   "twitter": "GoreMountain",
-  "opening": "2017-11-24",
   "noaa": "ALY/42,103"
 }

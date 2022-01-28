@@ -1,4 +1,42 @@
 
+3.36.0 / 2022-01-22
+===================
+
+ * add Pejo resort
+
+3.35.0 / 2022-01-04
+===================
+
+ * add Sasquatch Mountain
+ * add Mount Seymour
+
+3.34.0 / 2022-01-02
+===================
+
+ * add Canada Olympic Park
+ * add Manning Park
+ * fix Bridger Bowl resort
+ * fix Cannon resort
+
+3.33.1 / 2022-01-01
+===================
+
+ * fix Courchevel resort
+ * fix La Plagne resort
+ * fix Meribel resort
+ * fix Megeve resort
+ * fix Les Menuires resort
+
+3.33.0 / 2022-01-01
+===================
+
+ * add Cypress Mountain resort
+
+3.32.7 / 2021-12-29
+===================
+
+ * rewrite parser for Les Arcs
+
 3.32.6 / 2021-12-24
 ===================
 

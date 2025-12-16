@@ -7,3 +7,4 @@ public/scripts/
 .settings
 .DS_Store
 package-lock.json
+.idea

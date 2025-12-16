@@ -1,0 +1,34 @@
+name: Sync fork with upstream
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sync fork
+        id: sync
+        uses: tgymnich/fork-sync@v2.0
+        with:
+          token: ${{ secrets.SYNC_FORK_TOKEN }}
+          owner: pirxpilot
+          base: main
+          head: main
+
+      - name: Auto-approve PR
+        if: steps.sync.outputs.has_new_commits == 'true'
+        uses: hmarr/auto-approve-action@v4
+        with:
+          github-token: ${{ secrets.SYNC_FORK_TOKEN }}
+
+      - name: Enable auto-merge
+        if: steps.sync.outputs.has_new_commits == 'true'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.SYNC_FORK_TOKEN }}
+          pull-request-number: ${{ steps.sync.outputs.pull_request_number }}
+          merge-method: squash

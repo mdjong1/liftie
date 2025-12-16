@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('mtbrighton', 'html', {
   'Bunny': 'closed',
@@ -25,5 +25,5 @@ lifts('mtbrighton', 'html', {
   'Sunrise Bowl': 'closed',
   'Ledges': 'closed',
   'Gopher': 'closed',
-  'Riglet Park': 'closed',
+  'Riglet Park': 'closed'
 });

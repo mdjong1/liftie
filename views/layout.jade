@@ -11,11 +11,11 @@ mixin liftie-script(name)
   - var c = cachify(name + min + '.js', true);
 
   script(
+    type='module'
     src=staticHost + c.path,
     nonce=cspNonce,
     integrity=staticHost ? c.integrity : undefined,
     crossorigin=staticHost ? 'anonymous' : undefined,
-    defer
   )
 
 
@@ -37,7 +37,7 @@ html(
   head
     title= title
     +description('description')
-    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='mobile-web-app-capable', content='yes')
     meta(name='application-name', content='Liftie')
     meta(name='theme-color', content='#f5f8ff')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -57,7 +57,7 @@ html(
     link(rel='manifest', href='/manifest.json')
     +liftie-stylesheet('/stylesheets/style')
     link(rel='publisher', href='https://plus.google.com/107555641794612264233')
-  body(data-ga-property-id=settings.gaPropertyId)
+  body()
     block content
     block footer
       footer
@@ -73,10 +73,6 @@ html(
         a.icon-alone(href='http://codepen.io/pirxpilot/pen/EwdLc', title='Embed Liftie.', target='_blank', rel='nofollow noopener')
           span.ls-html
           span.text Embed Liftie
-        a.icon-alone(href='https://twitter.com/liftieinfo', title='Follow Liftie.', target='_blank', rel='nofollow noopener')
-          span.ls-twitter
-        a.icon-alone(href='https://facebook.com/liftie.info', title='Like Liftie.', target='_blank', rel='nofollow noopener')
-          span.ls-facebook
         a.icon-alone(href='mailto:contact@liftie.info' title='E-mail us')
           span.ls-email
         - var slug = tag ? '/' + tag : ''

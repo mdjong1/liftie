@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('val-gardena', 'html', {
   Val: 'closed',
@@ -73,7 +73,7 @@ lifts('val-gardena', 'html', {
   'Mezdì': 'closed',
   'Monte Piz - Rif. Icaro': 'closed',
   'Paradiso': 'closed',
-  'Punta d\'Oro': 'closed',
+  "Punta d'Oro": 'closed',
   'Sanon': 'closed',
   'Seiser Alm Aerial Cableway': 'closed',
   'Spitzbuehl': 'closed',

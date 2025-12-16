@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('big-white', 'html', {
   'Lara’s Gondola': 'open',
@@ -15,5 +15,5 @@ lifts('big-white', 'html', {
   'Kids Carpet': 'open',
   'Snow Ghost Express 6 Pack': 'scheduled',
   'TELUS Park Chair': 'open',
-  'Tube Park Lift': "open"
+  'Tube Park Lift': 'open'
 });

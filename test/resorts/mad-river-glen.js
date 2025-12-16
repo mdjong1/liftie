@@ -1,9 +1,9 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('mad-river-glen', 'html', {
   'Single Chair': 'open',
   'Sunnyside Double Chair': 'open',
   'Birdland Double Chair': 'closed',
   'Practice Slope Chair': 'closed',
-  'Callie\'s Corner Handle Tow': 'open'
+  "Callie's Corner Handle Tow": 'open'
 });

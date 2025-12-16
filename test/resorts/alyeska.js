@@ -1,9 +1,12 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('alyeska', 'html', {
   'Aerial Tram': 'open',
-  'Glacier Bowl Express': 'closed',
-  'Ted’s Express': 'closed',
-  'Bear Cub Quad': 'closed',
-  'Chair 7': 'closed',
+  'Chair 7': 'open',
+  'Glacier Bowl': 'scheduled',
+  "TeD's Express": 'open',
+  'Bear Cub Quad': 'open',
+  'Terrain Parks': 'scheduled',
+  Finnland: 'open',
+  "Wade's Way": 'open'
 });

@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('kitzbuehel', 'html', {
   'A1 Hahnenkammbahn': 'open',
@@ -58,5 +58,5 @@ lifts('kitzbuehel', 'html', {
   'G10 Panoramabahn II': 'open',
   'G11 Sun Kid Resterhöhe': 'closed',
   'H1 Bichlalm': 'open',
-  'Schneekatze': 'closed',
+  'Schneekatze': 'closed'
 });

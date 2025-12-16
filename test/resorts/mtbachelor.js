@@ -1,19 +1,21 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('mtbachelor', 'json', {
   'Chipmunk Carpet': 'closed',
-  'Little Pine': 'closed',
-  'Pine Marten': 'closed',
-  'Red Chair': 'closed',
-  'Skyliner': 'closed',
-  'Alpenglow': 'closed',
-  'Cloudchaser': 'closed',
   'Early Riser': 'closed',
   'First Rays': 'closed',
   'Lava Tube': 'closed',
-  'Rainbow': 'closed',
-  'Summit': 'closed',
-  'Sunrise': 'closed',
-  'Northwest': 'closed',
-  'Outback': 'closed'
+  'Little Pine (Summer)': 'closed',
+  'Little Pine (Winter) ': 'closed',
+  'Pine Marten (Summer)': 'closed',
+  'Pine Marten (Winter)': 'closed',
+  'Red Chair': 'closed',
+  'Skyliner Express': 'closed',
+  Alpenglow: 'closed',
+  Cloudchaser: 'closed',
+  Northwest: 'closed',
+  Outback: 'closed',
+  Rainbow: 'closed',
+  Summit: 'closed',
+  Sunrise: 'closed'
 });

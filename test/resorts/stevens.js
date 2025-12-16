@@ -1,17 +1,17 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('stevens', 'html', {
-  'Brooks Express': 'closed',
-  'Daisy': 'closed',
+  'Brooks Express': 'open',
+  Daisy: 'open',
   'Double Diamond': 'closed',
-  'Flow Zone Large Carpet': 'closed',
-  'Flow Zone Medium Carpet': 'closed',
-  'Flow Zone Small Carpet': 'closed',
-  'Hogsback Express': 'closed',
-  'Kehr\'s': 'closed',
-  'Seventh Heaven': 'closed',
-  'Skyline Express': 'closed',
-  'Tye Mill': 'closed',
+  'Hogsback Express': 'open',
   'Jupiter Express': 'closed',
-  'Southern Cross': 'closed'
+  "Kehr's": 'open',
+  'Marmot Carpet': 'closed',
+  'Pika Carpet': 'closed',
+  'Rope Tow 1': 'open',
+  'Rope Tow 2': 'closed',
+  'Skyline Express': 'open',
+  'Southern Cross': 'closed',
+  'Tye Mill': 'open'
 });

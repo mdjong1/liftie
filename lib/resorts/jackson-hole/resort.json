@@ -6,8 +6,7 @@
   },
   "api": {
     "host": "https://www.jacksonhole.com",
-    "pathname": "/api/all.json",
-    "http2": true
+    "pathname": "/api/all.json"
   },
   "tags": [
     "Wyoming"
@@ -18,5 +17,5 @@
     43.588318
   ],
   "twitter": "jhski",
-  "noaa": "RIW/39,143"
+  "noaa": "RIW/40,144"
 }

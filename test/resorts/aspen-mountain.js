@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('aspen-mountain', 'json', {
   'Ruthies': 'closed',
@@ -8,5 +8,5 @@ lifts('aspen-mountain', 'json', {
   'Bell Mountain': 'closed',
   'F.I.S.': 'closed',
   'Ajax Express': 'open',
-  'Gent\'s Ridge': 'open'
+  "Gent's Ridge": 'open'
 });

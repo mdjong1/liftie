@@ -1,7 +1,7 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('caberfae-peaks', 'html', {
-  'Vista 1561\' Triple Chairlift': 'open',
+  "Vista 1561' Triple Chairlift": 'open',
   'Shelter Double Chairlift': 'open',
   'North Peak Quad Chairlift': 'closed',
   'South Peak Triple Chairlift': 'open',

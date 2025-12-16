@@ -1,10 +1,10 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('sugarbush', 'json', {
   'Castlerock Double': 'closed',
   'Gate House Express Quad': 'closed',
   'Green Mountain Express Quad': 'closed',
-  'Heaven\'s Gate Triple': 'scheduled',
+  "Heaven's Gate Triple": 'scheduled',
   'Inverness Quad': 'closed',
   'North Lynx Triple': 'closed',
   'North Ridge Express Quad': 'closed',
@@ -13,7 +13,7 @@ lifts('sugarbush', 'json', {
   'Summit Quad': 'closed',
   'Sunshine Quad': 'closed',
   'Super Bravo Express Quad': 'open',
-  'Tommy\'s Toy': 'closed',
+  "Tommy's Toy": 'closed',
   'Valley House Quad': 'closed',
   'Village Quad': 'closed',
   'Welcome Mat': 'closed'

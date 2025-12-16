@@ -1,9 +1,10 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
-lifts('telluride',
-'html', {
+lifts('telluride', 'html', {
+  'Free Gondola – Town to MV': 'open',
   'Chondola': 'closed',
   'Childrens Magic Carpet': 'closed',
+  'Adult Magic Carpet': 'closed',
   'Village Express': 'closed',
   'Polar Queen Express': 'closed',
   'Apex Lift': 'closed',
@@ -12,10 +13,9 @@ lifts('telluride',
   'Plunge Lift': 'closed',
   'Sunshine Express': 'closed',
   'UTE Park': 'closed',
-  'Prospect Express': 'closed', Lynx: 'closed',
+  'Prospect Express': 'closed',
+  'Lynx': 'closed',
   'Gold Hill Express': 'closed',
   'Revelation Lift': 'closed',
-  'Adult Magic Carpet': 'closed',
-  'Free Gondola – Town to MV': 'closed',
-  'Learning Center Carpet': 'closed'
+  'North Meadows Carpet': 'closed'
 });

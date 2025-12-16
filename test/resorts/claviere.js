@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('claviere', 'html', {
   'SG2 RAFUYEL': 'closed',
@@ -9,4 +9,5 @@ lifts('claviere', 'html', {
   'SG4* COL SAUREL': 'closed',
   'SG4* SAGNALONGA': 'closed',
   'SG4* SERRA GRANET': 'closed',
-  'TP BABY': 'closed'         });
+  'TP BABY': 'closed'
+});

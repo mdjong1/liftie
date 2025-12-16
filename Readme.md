@@ -1,5 +1,6 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][build-image]][build-url]
+[![Dependencies][deps-image]][deps-url]
 
 # liftie.info
 
@@ -26,10 +27,6 @@ Clone this repo (or your fork)
 
     git clone git@github.com:pirxpilot/liftie.git && cd liftie
 
-Install dependencies:
-
-    yarn
-
 Build client side scripts: `make` will install all external components and trigger component build for you.
 
     make
@@ -54,7 +51,7 @@ The following files are generated for a newly added resort:
 - resort descriptor `lib/resort/acme/resort.json`,
 - parser `lib/resort/acme/index.js`,
 - and a test for a parsing function `test/resort/acme.js`.
-- lift status page retrived from internet `test/resort/example/acme.html` 
+- lift status page retrieved from internet `test/resort/example/acme.html` 
 
 You can check [this commit][commit-scaffold] to see what you can expect after this page is completed.
 
@@ -77,6 +74,10 @@ var expected = {
 At this point you should probably run the tests: since parsing function is not implemented the test
 will fail.
 
+You can run only the specific resort test by running:
+
+   make test TESTS="**/*/acme.js"
+
 ### Implement parser
 
 `lib/resorts/acme/index.js` exports the following object
@@ -87,7 +88,7 @@ module.exports = {
   selector: '.lifts',                // selector for lift information
   parse: {
     filter: node => node.children,   // if present skips nodes for which filter is falsy
-    name: '0/1',            // example of a simple path descriptor
+    name: '0/1',            // example of a simple path descriptor (second child of the first child)
     status: {               // example of a compound descriptor
       child: '+/1',
       attribute: 'alt',
@@ -131,6 +132,17 @@ Once parser is ready the tests should succeed.
 if there is a NOAA station nearby: run `bin/fetch-noaa --overwrite <resort-name>` to find it
 - [add webcams][commit-webcams] - normally just specifying position would add some webcams
 to the liftie page but you can also just add links to the webcams in resort.json descriptor
+
+### Alternative status source
+
+In some cases the lift status info is not directly accessible on the web page to which
+liftie should be redirecting its users. For example lift status might be contained in an
+invisible iframe or retrieved from a 3rd party server. In such cases specify `dataUrl` in
+addition to the `url` entry in the resort descriptor.
+
+Liftie will always use `url` to construct the link to the relevant resort page, and - if
+present - it will use `dataUrl` to retrieve the page that is subsequently parsed to obtain
+lift information.
 
 ### Resort JSON API
 
@@ -182,8 +194,11 @@ Tags CSS (stylus) is a simplified version of [Sliding Tags][7] by [Thibaut Couro
 [commit-noaa]: https://github.com/pirxpilot/liftie/commit/da1756d86ce9506a73e2cd274919e54a6f4bcfbf
 [commit-webcams]: https://github.com/pirxpilot/liftie/commit/de0951ef963732cea7858d7fd8db07f6ac8592ec
 
-[npm-image]: https://img.shields.io/npm/v/liftie.svg
-[npm-url]: http://badge.fury.io/js/liftie
+[npm-image]: https://img.shields.io/npm/v/liftie
+[npm-url]: https://npmjs.org/package/liftie
 
-[build-image]: https://img.shields.io/github/workflow/status/pirxpilot/liftie/check
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/liftie/check.yaml?branch=main
 [build-url]: https://github.com/pirxpilot/liftie/actions/workflows/check.yaml
+
+[deps-image]: https://img.shields.io/librariesio/release/npm/liftie
+[deps-url]: https://libraries.io/npm/liftie

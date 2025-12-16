@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('cypress-mountain', 'html', {
   'Eagle Express': 'open',
@@ -6,5 +6,5 @@ lifts('cypress-mountain', 'html', {
   'Raven Ridge': 'open',
   'Easy Rider': 'open',
   'Sky Chair': 'open',
-  'Midway Chair': 'open',
+  'Midway Chair': 'open'
 });

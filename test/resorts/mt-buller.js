@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('mt-buller', 'html', {
   'Blue Bullet Express': 'closed',
@@ -7,7 +7,7 @@ lifts('mt-buller', 'html', {
   'Bourke Street Carpet': 'closed',
   'Bull Run': 'closed',
   'Canyon Tows': 'closed',
-  'Cattleman\'s Carpets': 'closed',
+  "Cattleman's Carpets": 'closed',
   'Federation': 'closed',
   'Gliders Carpet': 'closed',
   'Grimus': 'closed',

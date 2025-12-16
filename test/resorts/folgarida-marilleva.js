@@ -1,17 +1,17 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('folgarida-marilleva', 'html', {
-  'Folgarida': 'closed',
+  'Folgarida': 'open',
   'Malghet Aut 2': 'closed',
   'Casina': 'closed',
   'Marilleva 900': 'closed',
   'Ometto': 'closed',
-  'Albare\'': 'closed',
+  "Albare'": 'closed',
   'Biancaneve': 'closed',
   'Marilleva': 'closed',
   'Doss della Pesa': 'closed',
   'Belvedere': 'closed',
-  'Panciana': 'closed',
+  'Panciana': 'open',
   'Sghirlat': 'closed',
   'Mastellina': 'closed',
   'Bassetta': 'closed',

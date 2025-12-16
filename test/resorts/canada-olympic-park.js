@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('canada-olympic-park', 'html', {
   '88 Lift Express': 'open',
@@ -6,5 +6,5 @@ lifts('canada-olympic-park', 'html', {
   'Progression Carpet': 'open',
   'Gold Carpet': 'open',
   'Silver Carpet': 'open',
-  'Bronze Carpet': 'open',
+  'Bronze Carpet': 'open'
 });

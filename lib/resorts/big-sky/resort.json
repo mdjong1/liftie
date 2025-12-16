@@ -2,7 +2,11 @@
   "name": "Big Sky",
   "url": {
     "host": "https://bigskyresort.com",
-    "pathname": "/lift-status"
+    "pathname": "/current-conditions"
+  },
+  "api": {
+    "host": "https://apim-marketing-001.azure-api.net",
+    "pathname": "/FeedService/v1/Feed/Facilities/Areas/Lifts/All?resortName=bs"
   },
   "tags": [
     "Montana"
@@ -13,5 +17,5 @@
     45.283333
   ],
   "twitter": "bigskyresort",
-  "noaa": "TFX/81,40"
+  "noaa": "TFX/82,41"
 }

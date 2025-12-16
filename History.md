@@ -1,4 +1,372 @@
 
+4.1.0 / 2025-12-16
+==================
+
+ * add Eldora resort
+
+4.0.4 / 2025-12-09
+==================
+
+ * fix Burke Mountain resort
+
+4.0.3 / 2025-12-06
+==================
+
+ * soft dependency update
+ * upgrade biome to 2.3.8
+ * upgrade esbuild to 0.27.1
+ * upgrade `@pirxpilot/swipe` to 3.0
+ * upgrade `tiny-pager` to 2.0.0
+ * upgrade `debounce` to 3.0.0
+ * upgrade connect-renderer to 2.0.0
+ * upgrade `@pirxpilot/connect` to 5.0.0
+ * upgrade `css-select` to ~6
+ * upgrade `connect-gzip-static` to ~5
+ * upgrade `connect-cachify-static` to ~5
+ * upgrade `@pirxpilot/router` to ~2
+
+4.0.2 / 2025-10-21
+==================
+
+ * upgrade `postcss-cachify` to 5.0.0
+ * soft dependency update
+ * use `mobile-web-app-capable` instead of `apple-*` version
+ * use esm format for compiled javascript module
+ * cachify-static format changed to `name`
+
+4.0.1 / 2025-10-20
+==================
+
+ * update NOAA stations
+ * simplify command line utils
+ * upgrade commander to ~14
+ * update github actions
+
+4.0.0 / 2025-10-19
+==================
+
+ * transition to ESM format
+ * upgrade biome to 2.2.6
+
+3.56.5 / 2025-10-19
+===================
+
+ * fix Loveland resort
+ * fix Monarch resort
+ * fix abasin resort
+
+3.56.4 / 2025-07-23
+===================
+
+ * use `@pirxpilot/on-headers`
+ * remove accidentally checked in HTML test fixture
+ * use `@pirxpilot/stylus` instead of stylus
+
+3.56.3 / 2025-05-22
+===================
+
+ * remove `http2` support for lift status
+ * use `fetch` instead of `superagent`
+
+3.56.2 / 2025-04-30
+===================
+
+ * upgrade `ro-rating` to 2.0.0
+ * upgrade `limiter` to 3.0.0
+ * upgrade `el-component` to 2.0.2
+ * upgrade superagent to 10.2.0
+ * soft dependency update
+ * replace `Feature-Policy` with `Permissions-Policy` header
+
+3.56.1 / 2025-03-26
+===================
+
+ * upgrade esbuild to 0.25.1
+ * soft dependency update
+
+3.56.0 / 2025-03-08
+===================
+
+ * add Mount Peter resort
+
+3.55.1 / 2025-01-24
+===================
+
+ * fix Alyeska resort
+ * update NOAA stations
+
+3.55.0 / 2025-01-21
+===================
+
+ * add Pleasant Mountain, formerly Shawnee Peak
+ * remove Shawnee Peak (now Pleasant Mountain)
+
+3.54.0 / 2025-01-19
+===================
+
+ * add Berkshire East resort
+ * fix Smugglers' Notch resort
+
+3.53.2 / 2025-01-04
+===================
+
+ * use connect et al. instead of Express
+
+3.53.1 / 2024-12-28
+===================
+
+ * use single version of debug package
+ * upgrade htmlparser2 to ~10
+ * soft dependency upgrade
+
+3.53.0 / 2024-12-13
+===================
+
+ * add Blue Mountain PA resort
+
+3.52.13 / 2024-12-12
+====================
+
+ * fix Brianhead resort
+ * fix Snowbird resort
+ * fix Snowbasin resort
+
+3.52.12 / 2024-12-12
+====================
+
+ * fix Cannot resort
+
+3.52.11 / 2024-12-01
+====================
+
+ * fix Bretton Woods url
+
+3.52.10 / 2024-11-19
+====================
+
+ * fix Boyne resorts
+ * dependecy upgrade
+
+3.52.9 / 2024-11-16
+===================
+
+ * fix Powdr resorts API changes
+
+3.52.8 / 2024-10-16
+===================
+
+ * soft dependency upgrade
+
+3.52.7 / 2024-09-17
+===================
+
+ * use esbuild to minimize CSS
+ * remove `browser` section from package.json
+ * dependency update
+
+3.52.6 / 2024-08-19
+===================
+
+ * fix Catedral Alta Patagonia resort
+
+3.52.5 / 2024-07-02
+===================
+
+ * soft dependecy upgrade
+ * upgrade clean-css-cli
+
+3.52.4 / 2024-04-24
+===================
+
+ * upgrade superagent to ~9
+ * fix typos
+
+3.52.3 / 2024-04-02
+===================
+
+ * update dependencies
+
+3.52.2 / 2024-03-29
+===================
+
+ * fix Telluride resort
+ * update dependencies
+ * use `Number.*` methods instead of global scope
+ * use `node:` prefix when using Node's built-in modules
+
+3.52.1 / 2024-03-09
+===================
+
+ * remove async dependency
+ * fix Cranmore Mountain resort
+
+3.52.0 / 2024-03-01
+===================
+
+ * add Whitefish Mountain resort
+ * add Bogus Basin resort
+
+3.51.4 / 2024-02-29
+===================
+
+ * fix Mammoth Lakes
+
+3.51.3 / 2024-02-18
+===================
+
+ * fix powdr resorts
+ * use biome as a linter
+
+3.51.2 / 2024-01-03
+===================
+
+ * fix skipped test
+ * upgrade stylus to 0.62
+ * soft dependency upgrade
+ * switch from yarn to pnpm
+
+3.51.1 / 2023-12-21
+===================
+
+ * fix Boyne resorts
+
+3.51.0 / 2023-12-19
+===================
+
+ * add Campo Felice
+
+3.50.0 / 2023-12-19
+===================
+
+ * add Roccaraso
+ * add Ovindoli
+ * add Monte Amiata
+
+3.49.0 / 2023-11-27
+===================
+
+ * adjust CSS to better support long resort names
+ * add Dolomiti Superski resorts
+
+3.48.0 / 2023-11-22
+===================
+
+ * add Chamonix resort
+
+3.47.0 / 2023-11-02
+===================
+
+ * add Tignes resort
+ * add Val d'Isere resort
+ * fix lumiplan parser - title case
+
+3.46.0 / 2023-10-29
+===================
+
+ * add Friuli Venezia Giulia resorts
+
+3.45.0 / 2023-10-29
+===================
+
+ * add La Molina resort
+ * upgrade dependencies
+
+3.44.1 / 2023-10-22
+===================
+
+ * upgrade to Webcams API v3
+ * fix Cervino coordinates
+
+3.44.0 / 2023-10-20
+===================
+
+ * add Cervino resort
+ * fix Paganella resort
+ * update NOAA stations info
+
+3.43.1 / 2023-10-17
+===================
+
+ * fix catedral coordinates
+
+3.43.0 / 2023-10-14
+===================
+
+ * add Skiwelt resort
+ * add Serfaus-Fiss-Ladis resort
+ * add Monterosa resort
+
+3.42.0 / 2023-10-10
+===================
+
+ * add Alta Badia resort
+ * add Flims Laxx Falera resort
+ * replace tape with node test runner
+
+3.41.1 / 2023-04-21
+===================
+
+ * update github actions config
+
+3.41.0 / 2023-04-21
+===================
+
+ * fix vail resort parser
+ * add option to skip some tests
+ * remove support for displaying twitter resort twitter feed
+ * remove social media links
+
+3.40.4 / 2023-04-10
+===================
+
+ * improve handling `forced json` mode
+
+3.40.3 / 2022-08-28
+===================
+
+ * upgrade css-select and htmlparser2
+ * update stylus
+ * upgrade `connect-` modules to promise API version
+ * update superagent to ~8
+
+3.40.2 / 2022-08-16
+===================
+
+ * use esbuild instead of browserify/terser
+
+3.40.1 / 2022-07-25
+===================
+
+ * use only country and region tags for Catedral Alta Patagonia
+ * fix Campiglio Dolomiti resorts
+
+3.40.0 / 2022-07-17
+===================
+
+ * add Cerro Catedral resort
+ * fix links in Readme
+
+3.39.1 / 2022-03-29
+===================
+
+ * fix `scheduled` state for Vail resorts
+
+3.39.0 / 2022-03-17
+===================
+
+ * add Monte Bondone resort
+
+3.38.0 / 2022-03-17
+===================
+
+ * add Alpe Cimbra lifts
+
+3.37.0 / 2022-03-16
+===================
+
+ * fix tags for Dolomiti resorts
+ * add Paganella resort
+
 3.36.0 / 2022-01-22
 ===================
 

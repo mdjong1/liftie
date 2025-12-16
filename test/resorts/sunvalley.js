@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('sunvalley', 'html', {
   '#01 River Run': 'closed',
@@ -7,7 +7,7 @@ lifts('sunvalley', 'html', {
   '#04 Cold Springs': 'closed',
   '#05 Lookout Express': 'closed',
   '#07 Greyhawk': 'closed',
-  '#08 Frenchman\'s': 'closed',
+  "#08 Frenchman's": 'closed',
   '#10 Challenger': 'closed',
   '#11 Lookout': 'closed',
   '#12 Seattle Ridge': 'closed',

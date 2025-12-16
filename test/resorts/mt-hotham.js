@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('mt-hotham', 'json', {
   'Audi Quattro': 'closed',
@@ -7,11 +7,11 @@ lifts('mt-hotham', 'json', {
   'The Drift': 'closed',
   'Gotcha': 'closed',
   'Heavenly Valley': 'closed',
-  'Keogh\'s': 'closed',
+  "Keogh's": 'closed',
   'Orchard': 'closed',
   'Playground': 'closed',
   'Road Runner': 'closed',
   'Summit': 'closed',
   'Summit Trainer': 'closed',
-  'Dinner Plain': 'closed',
+  'Dinner Plain': 'closed'
 });

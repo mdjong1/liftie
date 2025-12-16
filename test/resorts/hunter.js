@@ -1,9 +1,9 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('hunter', 'html', {
   '20th Century (C Lift)': 'closed',
   'Broadway (B Lift)': 'closed',
-  'D Lift': 'open',
+  'D Lift': 'closed',
   'Discovery Carpet': 'closed',
   'E Lift': 'closed',
   'F Lift': 'closed',

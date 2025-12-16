@@ -1,7 +1,7 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('timberline-lodge', 'html', {
   'STORMIN’ NORMAN': 'open',
-  'MAGIC MILE':  'open',
+  'MAGIC MILE': 'open',
   'PALMER': 'scheduled'
 });

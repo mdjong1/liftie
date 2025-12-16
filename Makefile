@@ -8,15 +8,39 @@ TESTS = $(filter-out test/replay/%, $(wildcard test/*.js test/*/*.js))
 
 LINT_SRC = app.js bin/generate lib test
 
-PLUGINS = lifts twitter weather webcams snow
+PLUGINS = lifts weather webcams snow
 
-ifndef TAP_REPORTER
-	ifneq (, $(shell which tap-difflet))
-		TAP_REPORTER = tap-difflet --pessimistic
-	else
-		TAP_REPORTER = cat
-	endif
-endif
+ESBUILD_FORMAT = esm
+
+ESBUILD_OPTS += \
+	--bundle \
+	--log-level=warning \
+	--color=false \
+	--tree-shaking=true \
+    --format=${ESBUILD_FORMAT} \
+	--target=es2018
+
+ESBUILD_MIN_OPTS += \
+	--define:DEBUG=false \
+	--drop:console \
+	--drop:debugger \
+	--minify
+
+define RUN_ESBUILD
+	$(NODE_BIN)/esbuild $< \
+		$(ESBUILD_OPTS) \
+		--sourcemap=linked \
+		--outfile=$@
+endef
+
+define RUN_ESBUILD_MIN
+	$(NODE_BIN)/esbuild $< \
+		$(ESBUILD_OPTS) \
+		$(ESBUILD_MIN_OPTS) \
+		--sourcemap=external \
+		--sources-content=false \
+		--outfile=$@
+endef
 
 all: lint test build
 
@@ -28,16 +52,6 @@ all: lint test build
 %.gz: %
 	gzip --best --force --keep $<
 
-%.min.js: %.js
-	$(NODE_BIN)/terser \
-		--define DEBUG=false \
-		--ecma 2018 \
-		--mangle \
-		--compress warnings=false \
-		--compress drop_console \
-		--output $@ \
-		-- $<
-
 %.styl.css: %.styl
 	$(NODE_BIN)/stylus $<
 
@@ -46,43 +60,55 @@ all: lint test build
 		--use postcss-cachify \
 		--postcss-cachify.baseUrl /stylesheets \
 		--postcss-cachify.basePath public \
+		--postcss-cachify.format name \
 		--output $@ $@
 
 %.min.css: %.css
-	$(NODE_BIN)/cleancss -O1 --output $@ $<
+	$(NODE_BIN)/esbuild \
+		--log-level=warning \
+		--color=false \
+		--minify \
+		--external:*.woff2 \
+		--sourcemap=external \
+		--sources-content=false \
+		--bundle $< \
+		--outfile=$@
 
-node_modules: package.json $(wildcard yarn.lock)
-	yarn --cwd $(@D) --no-progress --frozen-lockfile --silent
+node_modules: package.json pnpm-lock.yaml
+	pnpm install -C $(@D) --silent --frozen-lockfile
 	touch $@
 
+.NOTPARALLEL: node_modules
+
 lint: | node_modules
-	$(NODE_BIN)/jshint $(LINT_SRC)
+	$(NODE_BIN)/biome ci $(LINT_SRC)
+
+format: | node_modules
+	$(NODE_BIN)/biome check --write $(LINT_SRC)
 
 test: | node_modules
-	$(NODE_BIN)/tape $(TESTS) | $(TAP_REPORTER)
+	node --test $(TESTS)
 
 $(BUILD_DIR):
 	mkdir -p $@
 
-$(BUILD_DIR)/$(PROJECT).js: $(SRC) node_modules | $(BUILD_DIR)
-	NODE_PATH=lib/client:node_modules \
-	$(NODE_BIN)/browserify \
-	--require resort/lifts \
-	--require resort/twitter \
-	--require resort/weather \
-	--require resort/webcams \
-	--require resort/snow \
-	--entry lib/client/boot/index.js \
-	--outfile $@
+$(BUILD_DIR)/$(PROJECT).js: lib/client/boot/index.js $(SRC) node_modules | $(BUILD_DIR)
+	$(RUN_ESBUILD)
 
+$(BUILD_DIR)/$(PROJECT).min.js: lib/client/boot/index.js $(SRC) node_modules | $(BUILD_DIR)
+	$(RUN_ESBUILD_MIN)
+
+$(BUILD_DIR)/$(PROJECT)-embed.js: ESBUILD_FORMAT=iife
 $(BUILD_DIR)/$(PROJECT)-embed.js: lib/embed/index.js | $(BUILD_DIR)
-	echo '(function(){' > $@
-	cat $< >> $@
-	echo '}());' >> $@
+	$(RUN_ESBUILD)
+
+$(BUILD_DIR)/$(PROJECT)-embed.min.js: ESBUILD_FORMAT=iife
+$(BUILD_DIR)/$(PROJECT)-embed.min.js: lib/embed/index.js | $(BUILD_DIR)
+	$(RUN_ESBUILD_MIN)
 
 # stylus for CSS
 
-$(CSS_DIR)/style.css: $(wildcard $(CSS_DIR)/*.styl)
+$(CSS_DIR)/style.css: $(wildcard $(CSS_DIR)/*.styl) | node_modules
 
 build: $(BUILD_DIR)/$(PROJECT).js $(CSS_DIR)/style.css $(BUILD_DIR)/$(PROJECT)-embed.js
 
@@ -102,4 +128,4 @@ distclean: clean
 distclean:
 	rm -rf node_modules
 
-.PHONY: all test build dist clean distclean
+.PHONY: all test build dist clean distclean lint format

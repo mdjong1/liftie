@@ -1,45 +1,41 @@
-const test = require('tape');
-const { createReadStream } = require('fs');
+import assert from 'node:assert/strict';
+import { createReadStream, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import test from 'node:test';
+import makeParse from '../../lib/lifts/parse.js';
+import parser from '../../lib/lifts/parser.js';
 
-const parser = require('../../lib/lifts/parser');
-const makeParse = require('../../lib/lifts/parse');
+export default async function testResort(name, ext, expected, opts = {}) {
+  const filename = resolve(import.meta.dirname, `../resorts/example/${name}.${ext}`);
+  const parse = await makeParse(name);
 
-module.exports = testResort;
-
-function testResort(name, ext, expected, only = false) {
-
-  const filename = `${__dirname}/../resorts/example/${name}.${ext}`;
-  const parse = makeParse(name);
-
-
-  function testHTML(t) {
+  function testHTML(_t, done) {
     const stream = createReadStream(filename);
 
-    stream.on('error', t.end);
-    stream.pipe(parser(parse, function(err, status) {
-      t.deepEqual(status, expected, `lifts should match for ${name}`);
-      t.end(err);
-    }));
+    stream.on('error', done);
+    stream.pipe(
+      parser(parse, (err, status) => {
+        assert.ifError(err);
+        assert.deepEqual(status, expected, `lifts should match for ${name}, received: ${JSON.stringify(status)}`);
+        done();
+      })
+    );
   }
 
-  function testJSON(t) {
-    const asyncParse = parse.isAsync ?
-      parse :
-      (data, fn) => process.nextTick(fn, null, parse(data));
+  function testJSON(_t, done) {
+    const asyncParse = parse.isAsync ? parse : (data, fn) => process.nextTick(fn, null, parse(data));
 
-    const data = require(filename);
+    const data = JSON.parse(readFileSync(filename, 'utf8'));
 
-    asyncParse(data, function(err, status) {
-      t.deepEqual(status, expected);
-      t.end(err);
+    asyncParse(data, (err, status) => {
+      assert.deepEqual(status, expected);
+      done(err);
     });
   }
 
-
   const tested = ext === 'json' ? testJSON : testHTML;
-  const runTest = only ? test.only : test;
-
-  runTest(`${name} should return lift status`, tested);
+  test(`${name} should return lift status`, opts, tested);
 }
 
-testResort.only = (...args) => testResort(...args, true);
+testResort.only = (...args) => testResort(...args, { only: true });
+testResort.skip = (...args) => testResort(...args, { skip: true });

@@ -2,7 +2,7 @@
   "name": "Cannon",
   "url": {
     "host": "https://www.cannonmt.com",
-    "pathname": "/mountain/trails-lifts"
+    "pathname": "/trails-lifts"
   },
   "tags": [
     "New England",
@@ -14,5 +14,5 @@
     44.156452
   ],
   "twitter": "cannonmountain",
-  "noaa": "GYX/24,72"
+  "noaa": "GYX/21,72"
 }

@@ -1,12 +1,8 @@
 {
   "name": "Cranmore",
   "url": {
-    "host": "https://www.cranmore.com",
-    "pathname": "/The-Mountain/Resort-Information/Resort-Snow-Report"
-  },
-  "dataUrl": {
-    "host": "https://digital.cranmore.com",
-    "pathname": "/conditions/snow-report/propconditions/"
+    "host": "https://cranmore.com",
+    "pathname": "/snow-report"
   },
   "tags": [
     "New Hampshire",
@@ -18,5 +14,5 @@
   ],
   "twitter": "CranmoreMtn",
   "opening": "2017-12-02",
-  "noaa": "GYX/44,71"
+  "noaa": "GYX/41,71"
 }

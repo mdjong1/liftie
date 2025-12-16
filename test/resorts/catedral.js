@@ -1,0 +1,30 @@
+import lifts from '../lifts/index.js';
+
+lifts('catedral', 'html', {
+  'Magic I': 'open',
+  'Magic II': 'open',
+  'Magic III': 'open',
+  'Magic IV': 'open',
+  'Magic V': 'open',
+  'TS Princesita': 'open',
+  'TS Ciprés': 'open',
+  'TS Ñire': 'open',
+  'TS Lenga': 'closed',
+  'TS Nubes': 'closed',
+  'TS Centro': 'open',
+  'TS Triple Park': 'open',
+  'TS Sextuple': 'open',
+  'TS Punta Nevada': 'hold',
+  'TS Lynch': 'closed',
+  'TS La Hoya': 'closed',
+  'TS Militares': 'closed',
+  'TS Cóndor I': 'open',
+  'TS Cóndor II': 'open',
+  'TS Cóndor III': 'closed',
+  'TS Esquiadores (A Requerimiento)': 'closed',
+  'T-Bar Corto': 'open',
+  'T-Bar Largo': 'open',
+  'TC Amancay': 'open',
+  'TS Diente de Caballlo': 'open',
+  'TS Bosque': 'closed'
+});

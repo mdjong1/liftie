@@ -1,57 +1,54 @@
-var test = require('tape');
-var tags = require('../../lib/routes/tags');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import tags from '../../lib/routes/tags.js';
 
-test('tags should classify object according to tags', function(t) {
-  var objs = {
-    'a': 't3,t2,t1',
-    'b': 't2',
-    'c': 't1,t2',
-    'd': ''
+test('tags should classify object according to tags', () => {
+  const objs = {
+    a: 't3,t2,t1',
+    b: 't2',
+    c: 't1,t2',
+    d: ''
   };
 
-  function load(name){
+  function load(name) {
     return {
       id: name,
       tags: objs[name].split(',')
     };
   }
 
-  Object.keys(objs).forEach(function (n) {
+  Object.keys(objs).forEach(n => {
     objs[n] = load(n);
   });
-  var tt = tags(objs);
+  const tt = tags(objs);
 
-  t.deepEqual(tt.t1.members, ['a', 'c']);
-  t.deepEqual(tt.t2.members, ['a', 'b', 'c']);
-  t.deepEqual(tt.t3.members, ['a']);
-  t.deepEqual(Object.keys(tt), ['t1', 't2', 't3']);
-
-  t.end();
+  assert.deepEqual(tt.t1.members, ['a', 'c']);
+  assert.deepEqual(tt.t2.members, ['a', 'b', 'c']);
+  assert.deepEqual(tt.t3.members, ['a']);
+  assert.deepEqual(Object.keys(tt), ['t1', 't2', 't3']);
 });
 
-test('tags should conver names to cannonical form', function(t) {
-  var objs = {
-    'a': 'Nice Tag,Another Tag',
-    'b': 'Another Tag'
+test('tags should conver names to cannonical form', () => {
+  const objs = {
+    a: 'Nice Tag,Another Tag',
+    b: 'Another Tag'
   };
 
-  function load(name){
+  function load(name) {
     return {
       id: name,
       tags: objs[name].split(',')
     };
   }
 
-  Object.keys(objs).forEach(function (n) {
+  Object.keys(objs).forEach(n => {
     objs[n] = load(n);
   });
-  var tt = tags(objs);
+  const tt = tags(objs);
 
-  t.deepEqual(tt['nice-tag'].members, ['a']);
-  t.deepEqual(tt['nice-tag'].label, 'Nice Tag');
-  t.deepEqual(tt['another-tag'].members, ['a', 'b']);
-  t.deepEqual(tt['another-tag'].label, 'Another Tag');
-  t.deepEqual(Object.keys(tt), ['another-tag', 'nice-tag']);
-
-  t.end();
+  assert.deepEqual(tt['nice-tag'].members, ['a']);
+  assert.deepEqual(tt['nice-tag'].label, 'Nice Tag');
+  assert.deepEqual(tt['another-tag'].members, ['a', 'b']);
+  assert.deepEqual(tt['another-tag'].label, 'Another Tag');
+  assert.deepEqual(Object.keys(tt), ['another-tag', 'nice-tag']);
 });

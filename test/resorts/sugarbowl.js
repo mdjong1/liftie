@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('sugarbowl', 'html', {
   'Lincoln Express': 'scheduled',
@@ -6,7 +6,7 @@ lifts('sugarbowl', 'html', {
   'Disney Express': 'scheduled',
   'Summit Chair': 'closed',
   'Christmas Tree Express': 'scheduled',
-  'Crow\'s Peak': 'scheduled',
+  "Crow's Peak": 'scheduled',
   'Jerome Hill Express': 'scheduled',
   'Village Tow': 'scheduled',
   'White Pine (Beginner)': 'scheduled',

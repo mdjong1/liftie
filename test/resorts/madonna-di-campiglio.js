@@ -1,24 +1,24 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('madonna-di-campiglio', 'html', {
-  'Pradalago': 'closed',
+  'Pradalago': 'open',
   'Fortini NEW': 'closed',
   'Larici': 'closed',
   'Zeledria': 'closed',
   'Genziana': 'closed',
-  'Spinale': 'closed',
+  'Spinale': 'open',
   'Spinale 2': 'closed',
-  'Nube d\'Argento': 'closed',
-  'Nube d\'Oro': 'closed',
+  "Nube d'Argento": 'closed',
+  "Nube d'Oro": 'closed',
   'Boch': 'closed',
-  'Groste\' 1': 'closed',
-  'Groste\' 2': 'closed',
-  'Groste\'': 'closed',
+  "Groste' 1": 'open',
+  "Groste' 2": 'open',
+  "Groste'": 'closed',
   'Rododendro': 'closed',
   'Vagliana': 'closed',
-  '5 Laghi': 'closed',
+  '5 Laghi': 'open',
   'Miramonti': 'closed',
   'Patascoss': 'closed',
   'Pancugolo': 'closed',
-  'Carlo Magno': 'closed',
+  'Carlo Magno': 'closed'
 });

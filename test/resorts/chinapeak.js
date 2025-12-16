@@ -1,4 +1,4 @@
-const lifts = require('../lifts');
+import lifts from '../lifts/index.js';
 
 lifts('chinapeak', 'html', {
   'Chair 1': 'closed',
@@ -9,5 +9,5 @@ lifts('chinapeak', 'html', {
   'Chair 7': 'closed',
   'Kids Carpet': 'closed',
   'Boulder Carpet': 'closed',
-  'Juniper Carpet': 'closed',
+  'Juniper Carpet': 'closed'
 });

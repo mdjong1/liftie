@@ -1,4 +1,16 @@
 
+4.2.0 / 2025-12-31
+==================
+
+ * upgrade `biome` to 2.3.10
+ * upgrade `@pirxpilot/cookie-parser` to ~3
+ * soft dependency update
+
+4.1.1 / 2025-12-31
+==================
+
+ * update Bretonwoods resort for the new season
+
 4.1.0 / 2025-12-16
 ==================
 

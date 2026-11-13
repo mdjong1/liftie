@@ -1,0 +1,35 @@
+#!/bin/bash
+# Deploy origin/main of /opt/liftie when it differs from the last good deploy.
+# Gate: pnpm install + make build + make test + health check; any failure rolls back to the previous good commit.
+set -Eeuo pipefail
+cd /opt/liftie
+
+as() { runuser -u liftie -- "$@"; }
+health() { curl -fsS -m 30 -o /dev/null http://127.0.0.1:3500/api/resort/lesarcs; }
+STAMP=.git/deployed-sha
+
+as git fetch -q origin main
+NEW=$(as git rev-parse origin/main)
+[ "$NEW" = "$(cat "$STAMP" 2>/dev/null)" ] && exit 0
+PREV=$(cat "$STAMP" 2>/dev/null || as git rev-parse HEAD)
+
+build() { as git reset -q --hard "$1"; as pnpm install --frozen-lockfile --reporter=silent; as make build; }
+# ponytail: rollback rebuilds the previous commit in place (~1 min of the new tree on disk); use release dirs if that ever matters
+rollback() {
+  trap - ERR
+  echo "deploy of ${NEW:0:8} failed, rolling back to ${PREV:0:8}"
+  build "$PREV"
+  systemctl restart liftie
+  exit 1
+}
+trap rollback ERR
+
+build "$NEW"
+as make test
+systemctl restart liftie
+for _ in $(seq 20); do health && break; sleep 3; done
+health
+trap - ERR
+
+echo "$NEW" > "$STAMP"
+echo "deployed $(as git log -1 --format='%h %s')"

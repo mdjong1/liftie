@@ -1,0 +1,23 @@
+name: sync upstream
+
+# Daily merge of pirxpilot/liftie main into this fork's main (GitHub's "Sync fork", as a real merge).
+# Never squash upstream in: squashes break the shared history and every later sync conflicts.
+# A failed run (merge conflict with our own commits, or upstream touching .github/workflows,
+# which GITHUB_TOKEN may not push) emails you; then resolve locally or press "Sync fork" in the UI.
+# The VPS picks up main within 15 minutes (deploy/vps/liftie-deploy).
+
+on:
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh api -X POST repos/${{ github.repository }}/merge-upstream -f branch=main --jq '"\(.merge_type): \(.message)"'
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -1,0 +1,19 @@
+[Unit]
+Description=Liftie (github.com/mdjong1/liftie), deployed by liftie-deploy.timer
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=liftie
+WorkingDirectory=/opt/liftie
+# Port 3500 is not opened in UFW; liftie_relay (:7070) calls it locally
+Environment=NODE_ENV=production PORT=3500
+ExecStart=/usr/bin/node app.js
+Restart=always
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

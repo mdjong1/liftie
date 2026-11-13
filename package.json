@@ -1,14 +1,19 @@
 {
   "name": "liftie",
-  "version": "4.2.1",
+  "version": "4.4.2",
   "description": "Clean, simple, easy to read, fast ski resort lift status",
-  "type": "module",
   "keywords": [
     "ski",
     "snowboard"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/liftie.git"
+  },
   "license": "BSD-3-Clause",
   "author": "Damian Krzeminski <pirxpilot@furkot.com>",
+  "type": "module",
+  "main": "app.js",
   "files": [
     "lib",
     "public/*",
@@ -18,14 +23,12 @@
     "views",
     "Makefile"
   ],
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pirxpilot/liftie.git"
-  },
   "scripts": {
     "start": "node app.js",
     "test": "make lint test"
+  },
+  "resolutions": {
+    "on-headers": "npm:@pirxpilot/on-headers@2.0.0"
   },
   "dependencies": {
     "@pirxpilot/connect": "^5.0.0",
@@ -37,18 +40,18 @@
     "connect-cachify-static": "~5",
     "connect-gzip-static": "~5",
     "connect-renderer": "^2.0.0",
-    "css-select": "~6",
+    "css-select": "~7.0.0",
     "debounce": "^3.0.0",
     "debug": "~4",
-    "domelementtype": "^2.3.0",
-    "domhandler": "~5",
+    "domelementtype": "^3.0.0",
+    "domhandler": "~6.0.1",
     "dynload": "^1.0.2",
     "el-component": "~2",
     "errorhandler": "^1.5.0",
-    "esbuild": "^0.27.1",
-    "htmlparser2": "~10",
+    "esbuild": "^0.28.1",
+    "htmlparser2": "~12.0.0",
     "js-cookie": "^3.0.5",
-    "limiter": "~3",
+    "limiter": "~4",
     "lodash": "^4.16.6",
     "morgan": "^1.9.0",
     "parseurl": "^1.3.3",
@@ -57,24 +60,20 @@
     "to-title-case": "^1.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.11",
-    "@pirxpilot/stylus": "^1.2.0",
-    "commander": "~14",
+    "@biomejs/biome": "2.5.13",
+    "commander": "~15.0.0",
     "postcss": "~8",
     "postcss-cachify": "^5.0.0",
     "postcss-cli-simple": "~4.0.0",
     "prompt": "~1",
-    "undici": "^7.10.0"
+    "undici": "^8.7.0"
   },
-  "resolutions": {
-    "on-headers": "npm:@pirxpilot/on-headers@2.0.0"
+  "engines": {
+    "node": ">= 20.1.0"
   },
   "pnpm": {
     "overrides": {
       "debug": "~4"
     }
-  },
-  "engines": {
-    "node": ">= 20.1.0"
   }
 }

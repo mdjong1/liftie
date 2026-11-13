@@ -18,6 +18,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - run: gh api -X POST repos/${{ github.repository }}/merge-upstream -f branch=main --jq '"\(.merge_type): \(.message)"'
+      - run: |
+          gh api -X POST repos/${{ github.repository }}/merge-upstream -f branch=main --jq '"\(.merge_type): \(.message)"'
         env:
           GH_TOKEN: ${{ github.token }}
